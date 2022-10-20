@@ -1,0 +1,952 @@
+\documentclass[10pt,twocolumn]{IEEEtran2e}
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage[pdftex]{graphicx}
+\usepackage{rangecite}				%-- allows [12-22] in citation
+\usepackage{varioref}				%-- descriptive references
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.mps}
+\graphicspath{{figures/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ud}{\mathrm{d}}
+\newcommand{\sfig}[4]{%
+\begin{figure}[ht!]%
+  \begin{center}%
+    {\includegraphics[width=#1\columnwidth]{#2}}%
+  \end{center}%
+  \caption{#3}%
+  \label{fig:#2}%
+\end{figure}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Resumen Termodin\'amica}
+\author{9 de Junio de 2009}
+\markboth{Jorge Anais}{}
+\begin{document}
+\maketitle
+% \tableofcontents
+%\begin{abstract}
+%Preparaci\'on para $I_{1}$ de Termodin\'amica.
+%Resumen en base al texto de Callen capitulo 2. 
+%\end{abstract}
+
+%\begin{keywords}
+%Relaci\'on Energ\'etica Fundamental, Ecuaciones de Estado, Par\'ametros entr\'opicos intensivos, Equilibrio %T\'ermico, Equilibrio Mec\'anico.
+%\end{keywords}
+
+\section{Relaci\'on Energ\'etica Fundamental}
+\begin{equation}
+ U=U(S,V,N_{1},N_{2},...,N_{r})
+\end{equation}
+
+Derivando:
+
+\begin{eqnarray}
+ dU & = & \bigg(\frac{\partial U}{\partial S}\bigg)_{V,N_{1},..,N_{r}} dS + \bigg(\frac{\partial U}{\partial V}\bigg)_{S,N_{1},..,N_{r}} dS \nonumber\\
+    &  &  \, + \, \sum_{j=1}^{r} \bigg(\frac{\partial U}{\partial N_{j}}\bigg)_{U,V} dN_{j}
+\end{eqnarray}
+
+
+Conviene llamarle a estas derivadas nombres especiales:
+
+\begin{eqnarray}
+\bigg(\frac{\partial U}{\partial S}\bigg)_{V,N_{1},..,N_{r}} & \equiv & T \qquad \textrm{Temperatura}\\
+- \bigg(\frac{\partial U}{\partial V}\bigg)_{S,N_{1},..,N_{r}} & \equiv & p \qquad \textrm{ Presi\'on}\\
+\bigg(\frac{\partial U}{\partial N}\bigg)_{S,V,..,N_{r}}     & \equiv & \mu_{j} \qquad \textrm{P. Electro-qu\'imico}
+\end{eqnarray}
+
+As\'i la ecuaci\'on 1 la escribimos
+
+\begin{equation}
+ \ud U = T \, \ud S \, \underbrace{- p \, \ud V}_{\spadesuit} + \sum_{j=1}^{r}\mu_{j} \, \ud N_{j}
+\end{equation}
+
+$\spadesuit$: Este t\'ermino es definido como el trabajo cuasiest\'atico $\ud W_{m}$.
+
+\textit{Observaci\'on:} cada t\'ermino de la ecuaci\'on anterior tiene unidades de energ\'ia
+
+En el caso de N constante, la ecuaci\'on 1 puede ser escrita como:
+
+\begin{equation}
+ T \, \ud S = \ud U -\ud W_{m}
+\end{equation}
+
+\begin{equation}
+ \ud Q = T \, \ud S
+\end{equation}
+
+Un flujo cuasi-est\'atico de calor en un sistema esta asociado con el incremento de la entrop\'ia del sistema.
+
+\begin{equation}
+ \ud U = \ud Q + \ud W_{m} + \ud W_{c}
+\end{equation}
+
+\section{Ecuaciones de Estado}
+
+La temperatura, la presi\'on y el potencial electro-qu\'imico son derivadas parciales de funciones de $S, V, N_{1},...,N_{r}$ y consecuentemente tambi\'en son funciones de $S,V,N_{1},...,N_{r}$
+
+\begin{eqnarray}
+T & = & T(S,V,N_{1},...,N_{r})\\
+P & = & T(S,V,N_{1},...,N_{r})\\
+\mu_{j} & = & T(S,V,N_{1},...,N_{r})
+\end{eqnarray}
+
+Tales relaciones, expresan par\'ametros intensivos en t\'erminos de par\'amentros extensivos.
+Estas son llamadas \textsf{ecuaciones de estado}.
+
+El conocimiento de una ecuaci\'on de estado \textsf{no} constituye el conocimiento de todas las propiedades del sistema termodin\'amico.
+Todas las ecuaciones de estado son equivalentes a la ecuaci\'on fundamental.
+
+Es conveniente considerar una condensaci\'on de la notaci\'on:
+
+\begin{equation}
+ U=U(S,X_{1},X_{2},...)
+\end{equation}
+
+Los par\'ametros intensivos los denotamos por:
+
+\begin{eqnarray}
+\bigg(\frac{\partial U}{\partial S}\bigg)_{X_{1},X_{2}}  \equiv  T = T(S,X_{1},X_{2},...,X_{t})\\
+\bigg(\frac{\partial U}{\partial X_{j}} \bigg)_{S,X_{k}}  \equiv  P_{j} = P(S,X_{1},X_{2},...,X_{t})
+\end{eqnarray}
+
+de aqu\'i que:
+
+\begin{equation}
+ \ud U = T \, \ud S + \sum_{j=1}^{t}P_{j} \, \ud X_{j}
+\end{equation}
+
+Para sistemas de un componente la diferencial de la energ\'ia es com\'unmente escrita en t\'erminos de cantidades molares.
+
+\begin{equation}
+ u=u(s,v)
+\end{equation}
+donde
+\begin{equation}
+ s=\frac{S}{N} \qquad v=\frac{V}{N}
+\end{equation}
+\begin{equation}
+ u(s,v)=\frac{1}{N}U(S,V,N)
+\end{equation}
+Tomando una infinitesimal variaci\'on de la ecuaci\'on 17
+\begin{equation}
+ \ud u = \frac{\partial u}{\partial s}\,\ud s +\frac{\partial u}{\partial v}\,\ud v
+\end{equation}
+Entonces
+\begin{equation}
+ \bigg( \frac{\partial u}{\partial s} \bigg)_{v}=\bigg( \frac{\partial u}{\partial s} \bigg)_{V,N}=\bigg( \frac{\partial U}{\partial S} \bigg)_{V,N}=T
+\end{equation}
+y similarmente
+
+\begin{equation}
+ \bigg( \frac{\partial u}{\partial v} \bigg)_{s}=-P
+\end{equation}
+As\'i
+\begin{equation}
+ \ud u = T \, \ud s - P \, \ud v
+\end{equation}
+
+\section{Par\'ametros entr\'opicos intensivos}
+
+Relaci\'on entr\'opica fundamental:
+\begin{equation}
+ S=S(X_{0},X_{1},..,X_{t})
+\end{equation}
+\textit{Observaci\'on}: los par\'ametros $X_{0},X_{1},..,X_{t}$ se llaman par\'ametros extensivos entr\'opicos.\\
+
+Tomando una variacion infinitesimal:
+
+\begin{equation}
+ \ud S= \sum_{k=0}^{t} \frac{\partial S}{\partial X_{k}}\, \ud X_{k}
+\end{equation}
+
+las cantidades $\frac{\partial S}{\partial X_{k}}$ son denotadas por $F_{k}$
+
+\begin{equation}
+ F_{k}\equiv \frac{\partial S}{\partial X_{k}}
+\end{equation}
+
+a estos par\'ametros $F_{k}$ los llamamos par\'ametros intensivos entr\'opicos. Adem\'as se observa que:
+
+\begin{equation}
+ F_{0}=\frac{1}{T} \qquad F_{k}=- \frac{P_{k}}{T}
+\end{equation}
+
+
+\section{Equilibrio T\'ermico - Temperatura}
+
+Considere un sistema compuesto cerrado que consiste en dos sistemas simples separados por una muralla que es r\'igida e impermeable a la materia pero que permite el flujo de calor. El vol\'umen y el n\'umero de mol\'eculas de cada uno de los sistemas es fijo, pero las energ\'ias $U^{(1)}$ y $U^{(2)}$ pueden cambiar libremente sujeto a la restricci\'on de conservaci\'on.
+
+\begin{equation}
+ U^{(1)}+U^{(2)} = \textrm{constante}
+\end{equation}
+
+De acuerdo con el postulado fundamental, los valores $U^{(1)}$ y $U^{(2)}$ son los que maximizan la entrop\'ia. Esto es:
+
+\begin{equation}
+ \ud S=0
+\end{equation}
+
+La aditividad de la entrop\'ia para dos subsistemas da l realci\'on:
+
+\begin{equation}
+ S= S^{(1)}(U^{(1)}, V^{(1)}, ... ,N_{j}^{(1)})+S^{(2)}(U^{(2)}, V^{(2)}, ... ,N_{j}^{(2)})
+\end{equation}
+
+empleando la definici\'on de temperatura:
+
+\begin{equation}
+ \ud S=\frac{1}{T^{(1)}}\, \ud U^{(1)} + \frac{1}{T^{(2)}}\, \ud U^{(2)}
+\end{equation}
+
+por la condici\'on de conservaci\'on (ecuaci\'on 28) nosotros tenemos:
+\begin{eqnarray}
+ \ud U^{(2)} = - \ud U^{(1)}\\
+ \ud S= \bigg(\frac{1}{T^{(1)}}-\frac{1}{T^{(2)}} \bigg) \ud U
+\end{eqnarray}
+
+La condici\'on de equilibrio demanda que $\ud S$ sea cero para valores arbitrarios de $\ud U^{(1)}$, entonces
+
+\begin{equation}
+ \frac{1}{T^{(1)}} = \frac{1}{T^{(2)}}
+\end{equation}
+Cuando las temperaturas $T^{(1)}$ y $T^{(2)}$ son iguales, se ha alcanzado el estado de equilibrio (de acuerdo a las ideas intuitivas).
+
+\subsection*{Unidades de Temperatura}
+
+La relaci\'on entre unidades de temperatura y energ\'ia es:
+\begin{equation}
+\underbrace{1.3806\times 10^{-23} \bigg[ \frac{Joules}{Kelvin} \bigg]}_{k_{B}}
+\end{equation}
+
+$k_{B}$ es la constante de Boltzmann. As\'i $k_{B}\,T$ es Energ\'ia.
+
+\section{Equilibrio Mec\'anico y Presi\'on}
+Consideremos un sistema cerrado copuesto por dos sistemas simples, separados por una pared diat\'ermica m\'ovil que es impermeable al flujo de materia. Los valores de $U^{(1)}$ y $U^{(2)}$ puede cambiar, sujeto solo a la condici\'on.
+
+\begin{equation}
+ U^{(1)} + U^{(2)} = \textrm{constante}
+\end{equation}
+y los valores de $V^{(1)}$ y $V^{(2)}$ puede cambiar, sujeto solo a la condici\'on:
+\begin{equation}
+ V^{(1)} + V^{(2)} = \textrm{constante}
+\end{equation}
+
+\begin{equation}
+ \ud S=0
+\end{equation}
+donde:
+
+\begin{eqnarray}
+  dS & = & \bigg(\frac{\partial S^{(1)}}{\partial U^{(1)}}\bigg)_{V^{(1)},...,N_{k}^{(1)}} dU^{(1)} + \bigg(\frac{\partial S^{(1)}}{\partial V^{(1)}}\bigg)_{U^{(1)},...,N_{k}^{(1)}} dV^{(1)} \nonumber\\
+    & + & \bigg(\frac{\partial S^{(2)}}{\partial U^{(2)}}\bigg)_{V^{(2)},...,N_{k}^{(2)}} dU^{(2)} + \bigg(\frac{\partial S^{(2)}}{\partial V^{(2)}}\bigg)_{U^{(2)},...,N_{k}^{(2)}} dV^{(2)}\nonumber \\
+\end{eqnarray}
+por condici\'on de cierre:
+
+\begin{eqnarray}
+ \ud U^{(2)}=-\ud U^{(1)}\\
+ \ud V^{(2)}=-\ud V^{(1)}
+\end{eqnarray}
+
+entonces 
+
+\begin{eqnarray}
+ \ud S = \bigg(\underbrace{ \frac{1}{T^{(1)}} - \frac{1}{T^{(2)}}}_{0}\bigg)\,\ud V^{(1)} 
+       + \bigg( \underbrace{ \frac{p^{(1)}}{T^{(1)}} - \frac{p^{(2)}}{T^{(2)}}}_{0} \bigg)\, \ud V^{(1)}
+\end{eqnarray}
+de lo que:
+\begin{eqnarray}
+ T^{(1)}=T^{(2)}\\
+ p^{(1)}=p^{(2)}
+\end{eqnarray}
+
+%\begin{equation}
+%  \,{\rm d}\!\bar{ }\, W\,
+%\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CAPITULO #3                                                                       5 de mayo 2009
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+\section{Ecuaci\'on de Euler}
+Puesto que la relaci\'on fundamental es homog\'enea de primer \'orden, permite que sea escrita de una conveniente
+forma, llamada la forma de Euler.
+\begin{equation}
+ U(\lambda S,\lambda X_{1} ... \lambda X_{t})=\lambda U(S,X_{1},...,X_{t})
+\end{equation}
+Diferenciando respecto a $\lambda$
+\begin{eqnarray}
+ \frac{\partial U(...,\lambda X_{k},...)}{\partial (\lambda S)} \, \frac{\partial(\lambda S)}{\partial \lambda}+
+\frac{\partial U(...,\lambda X_{k},...)}{\partial (\lambda X_{j})} \, \frac{\partial(\lambda X_{j})}{\partial \lambda} \nonumber\\
+ + \,...= U(S,X_{1},...,X_{2})
+\end{eqnarray}
+
+Esta ecuaci\'on es cierta para cualquier $\lambda$, en particular para $\lambda=1$. As\'i toma la forma:
+
+\begin{equation}
+ \frac{\partial U}{\partial S} S + \sum_{j=1}^{t} \frac{\partial U}{\partial X_{j}}X_{j} + ... =U
+\end{equation}
+\begin{equation}
+ U=TS + \sum_{j=1}^{t}P_{j}X_{j}
+\end{equation}
+En particular para un sistema simple tenemos
+\begin{equation}
+ U=TS-PV+\mu_{1}N_{2}+\mu_{r}N_{r}
+\end{equation}
+
+A las ecuaciones anteriores nos referimos como la relaci\'on de Euler.La representaci\'on entr\'opica de la relaci\'on de Euler tiene la forma:
+
+\begin{equation}
+ S=\sum_{j=0}^{t}F_{j}X_{j}
+\end{equation}
+\begin{equation}
+ S=\bigg(\frac{1}{T}\bigg)U+\bigg(\frac{P}{T}\bigg)V-\sum_{k=1}^{r}\bigg(\frac{\mu_{k}}{T}\bigg)N_{k}
+\end{equation}
+
+\section{La relaci\'on de Gibbs-Duhem}
+Una forma diferencial de la relaci\'on entre los par\'ametros intensivos puede ser obtenido directamente de la relaci\'on de Euler y se conoce como la relaci\'on de Gibbs-Duhem. As\'i tomando la variacion infinitecimal de la ecuaci\'on
+\begin{equation}
+ \ud U = T\, \ud S + \sum_{j=1}^{t}P_{j}\, \ud X_{j} + \sum_{j=1}^{t}X_{j}\,\ud P
+\end{equation}
+Pero de acuerdo a la ecuaci\'on 16 se sabe que
+\begin{equation}
+ \ud U=T\,\ud S + \sum_{j=1}^{t}P_{j}\,\ud X_{j}
+\end{equation}
+De donde, por sustracci\'on encontramos la relaci\'on Gibbs-Duhem
+\begin{equation}
+ S\,\ud T+\sum_{j=1}^{t}X_{j}\,\ud P_{j}=0
+\end{equation}
+En particular para un \'unico componente de un sistema simple tenemos
+\begin{equation}
+ S\,\ud T-V\,\ud P + N\,\ud \mu=0
+\end{equation}
+\begin{equation}
+ \ud \mu = -s\,\ud T + v\,\ud P
+\end{equation}
+La relaci\'on de Gibbs-Duhem representa la relaci\'on entre los par\'ametros intensivos en forma diferencial.
+La integral de esta ecuaci\'on produce la relacion en forma expl\'icita. Para integrar la relacion de Gibbs-Duhem se debe conocer la ecuaci\'on de estado que permite escribir los $X_{j}$'s en t\'erminos de los $P_{j}$'s o viceversa.
+
+La relaci\'on de Gibbs-Duhem de forma entr\'opica es:
+\begin{equation}
+ \sum_{j=0}^{t}X_{j}\,\ud F_{j}=0
+\end{equation}
+\begin{equation}
+ U\,\ud \bigg(\frac{1}{T}\bigg)+V\,\ud\bigg(\frac{P}{T}\bigg)-\sum_{k=1}^{r}\,\ud\bigg(\frac{\mu_{k}}{T}\bigg)=0
+\end{equation}
+
+\section{Resumen de la Estructura Formal}
+La ecuacion fundamental
+\begin{equation}
+ U=U(S,V,N)
+\end{equation}
+contiene toda la informaci\'on termodin\'amica sobre un sistema. Con la definici\'on $T=\partial U/\partial S$ y las otras respectivas, la ecuaci\'on fundamental implica las ecuaciones de estado
+\begin{eqnarray}
+T = T(S,V,N) = T(s,v) \\
+P = P(S,V,N) = P(s,v) \\
+\mu =\mu (S,V,N) = P(s,v)
+\end{eqnarray}
+si estas tres ecuaciones de estado son conocidas, s\'olo basta colocarlas en la relacion de Euler y as\'i recuperar la ecuaci\'on fundamental.
+
+Si solo conocemos 2 ecuaciones de estado, la relaci\'on de Gibbs-Duhem puede ser integrada para obtener la tercera. La ecuaci\'on de estado obtenida aqu\'i contendr\'a una constante de integraci\'on.
+
+Una equivalencia l\'ogica pero m\'as directa y generalmente m\'as conveniente de obtener la ecuaci\'on fundamental cuando dos ecuaciones de estado son dadas es por integraci\'on directa de la relaci\'on molar.
+\begin{equation}
+ \ud u = T\,\ud s - P\,\ud v
+\end{equation}
+El conocimento de $T=T(s,v)$ y $P=P(s,v)$ conlleva a una ecuaci\'on diferencial en tres variables $u$, $s$ y $v$, y la integraci\'on resulta
+\begin{equation}
+ u=u(s,v)
+\end{equation}
+que es la ecuaci\'on fundamental. De nuevo tenemos obviamente una constante de integraci\'on indeterminda.\\
+
+Siempre es posible expresar la energ\'ia interna como una funci\'on de otros par\'ametros distintos de $S$, $V$ y $N$. As\'i podr\'iamos eliminar $S$ desde $U=U(S,V,N)$ y $T=T(S,V,N)$ para poder obtener una ecuaci\'on de la forma $U=U(T,V,N)$. Sin embargo no es una relaci\'on fundamental y no contiene toda la informaci\'on termodin\'amica posible.
+
+En efecto, renombrando T como $\partial U/ \partial S$, notamos que $U=U(T,V,N)$ es una ecuaci\'on con derivadas parciales. Siempre que esta ecuaci\'on sea integrable, podr\'ia llevarse a la ecuaci\'on fundamental, con funciones indeterminadas. As\'i el conocimiento de la relaci\'on $U=U(S,V,N)$ permite el c\'alculo de $U=U(T,V,N)$, pero el conocimiento de $U=U(T,V,N)$ no permite lo inverso.\\
+
+\textit{Ejemplo}: Un sistema obedece a la ecuaci\'on:
+\begin{equation}
+ U=\frac{1}{2}PV
+\end{equation}
+y
+\begin{equation}
+ T^{2}=\frac{AU^{\frac{3}{2}}}{VN^{\frac{1}{2}}}
+\end{equation}
+
+donde $A$ es una constante positiva. Encuentre la ecuaci\'on fundamental.
+
+\textit{Soluci\'on}: Escribimos las ecuaciones de la forma de ecuaciones de estado usando la representaci\'on entr\'opica (esto porque la presencia de U, V y N como par\'ametros independientes nos lo sugiere):
+\begin{eqnarray}
+ \frac{1}{T}=A^{-\frac{1}{2}} u^{-\frac{3}{4}} v^{-\frac{1}{2}} \\
+ \frac{P}{T}=2A^{-\frac{1}{2}} u^{-\frac{1}{4}} v^{-\frac{1}{2}} 
+\end{eqnarray}
+
+luego la forma diferencial de la ecuaci\'on fundamental molar, equivalente a la ecuaci\'on (63) es:
+\begin{equation}
+ \ud s = \frac{1}{T}\, \ud u + \frac{P}{T} \, \ud v
+\end{equation}
+
+reemplazamos
+\begin{equation}
+ \ud s = A^{-\frac{1}{2}} \bigg(\frac{v^{\frac{1}{2}}}{u^{\frac{3}{4}}}\ud u + 2\frac{u^{\frac{1}{2}}}{v^{\frac{1}{2}}}\ud v  \bigg) 
+\end{equation}
+
+La ecuaci\'on para $\ud s$ en t\'erminos de $\ud u$ y $\ud v$ es una ecuaci\'on diferencial parcial. Como no s\'e integrarla, \textit{m\'agicamente} nos damos cuenta que la palta entre par\'entesis que queda arriba es el diferencial de $\ud (u^{1/4}v^{1/2}) $, as\'i:
+
+\begin{eqnarray}
+ \ud s = 4 A^{-\frac{1}{2}} \,\ud(u^{1/4}v^{1/2}) \\
+\int \ud s = \int 4 A^{-\frac{1}{2}} \,\ud(u^{1/4}v^{1/2})\\
+s = 4 A^{-1} u^{1/4}v^{1/2} + s_{\circ} \\
+S = 4 A^{-1} U^{1/4} V^{1/2} N^{1/4} + Ns_{\circ}
+\end{eqnarray}
+
+\section{Gas Ideal Simple}
+Un gas ideal es caracterizado por dos ecuaciones
+\begin{eqnarray}
+ PV=NRT\\
+ U=cNRT
+\end{eqnarray}
+donde $c$ es una constante y R es la constante de universal de los gases  ($R=N_{A}k_{B}$=8,3144 J/mol K).
+Se ha observado experimentalmente que los gases compuestos de \'atomos monoat\'omicos sin interacci\'on (como He, Ar, Ne) satisfacen las ecuaciones (75) y (76) a temperaturas en las que $k_{B}T$  es peque\~na comparada con la energ\'ia de exitaci\'on electr\'onica (i.e. $T\lesssim 10^{4}$ [K]) y a bajas presiones. Todos estos \textit{gases ideales monoat\'omicos} tienen un valor para $c=\frac{3}{2}$.
+
+Las ecuaciones (75) y (76) nos permiten determinar la ecuaci\'on fundamental. La forma expl\'icita de la energ\'ia U en (76) sugiere que utilicemos la representaci\'on entr\'opica.
+\begin{eqnarray}
+ \frac{1}{T}=cR\bigg(\frac{N}{U}\bigg)=\frac{cR}{u} \\
+ \frac{P}{T}=R\bigg(\frac{N}{V}\bigg)=\frac{R}{v}
+\end{eqnarray}
+
+Desde estas dos ecuaciones entr\'opicas de estado encontramos la tercera ecuaci\'on de estado
+
+\begin{equation}
+  \frac{\mu}{T}=\textrm{funci\'on de $u,v$}
+\end{equation}
+por integraci\'on de la relaci\'on Gibbs-Duhem:
+\begin{equation}
+ \ud \bigg(\frac{\mu}{T}\bigg)=u\,\ud\bigg(\frac{1}{T}\bigg)+v\,\ud\bigg(\frac{P}{T}\bigg) 
+\end{equation}
+
+Finalmente, las tres ecuaciones de estado pueden ser sustituidas en la ecuaci\'on de Euler:
+\begin{equation}
+ S=\bigg(\frac{1}{T} \bigg)U+\bigg(\frac{P}{T}\bigg)V-\bigg(\frac{\mu}{T}\bigg)N
+\end{equation}
+Procediendo de esta manera en la relaci\'on de Gibbs-Duhem (ecuaci\'on 80)
+\begin{eqnarray}
+ \ud \bigg(\frac{\mu}{T}\bigg) &= & u \times \bigg(-\frac{cR}{u^{2}}\bigg)\,\ud u + v \times \bigg(-\frac{R}{v^{2}}\bigg)\,\ud v \nonumber \\
+ &= & -cR\frac{\ud u}{u} -R\frac{\ud v}{v}
+\end{eqnarray}
+e integrando se llega a
+
+\begin{equation}
+ \frac{\mu}{T}-\bigg(\frac{\mu}{T}\bigg)_{\circ}=-cR \ln \bigg(\frac{u}{u_{\circ}} \bigg) - R \ln\bigg(\frac{v}{v_{\circ}} \bigg) 
+\end{equation}
+
+Aqu\'i $u_{\circ}$ y $v_{\circ}$ son los par\'ametros de un estado de referencia fijo, y $\big(\frac{\mu}{T}\big)_{\circ}$ aparece como una constante de integraci\'on indeterminada. Luego de la relaci\'on de Euler:
+
+\begin{equation}
+ S=Ns_{\circ}-NR \ln\bigg[ \bigg(\frac{U}{U_{\circ}} \bigg)^{c} \bigg(\frac{V}{V_{\circ}} \bigg) \bigg(\frac{N}{N_{\circ}} \bigg)^{-(c+1)} \bigg]
+\end{equation}
+
+donde 
+\begin{equation}
+ s_{\circ} = (c+1)R - \bigg( \frac{\mu}{T}\bigg)_{\circ}
+\end{equation}
+
+La ecuacion (84) es la ecuaci\'on fundamental para un gas ideal. Esta contiene toda la informaci\'on termodin\'amica posible. Alternativamente, y m\'as directamente, podemos integrar la ecuaci\'on molar:
+\begin{equation}
+ \ud s = \bigg( \frac{1}{T}\bigg)\ud u + \bigg(\frac{P}{T}\bigg)\ud v
+\end{equation}
+lo que en nuestro caso es:
+\begin{equation}
+ \ud s = c \bigg(\frac{R}{u}\bigg)\, du + \bigg(\frac{R}{v}\bigg)\,\ud v
+\end{equation}
+\begin{equation}
+ s=s_{\circ}+cR\ln\bigg(\frac{u}{u_{\circ}}\bigg) + R \ln\bigg(\frac{v}{v_{\circ}}\bigg)
+\end{equation}
+Esta \'ultima ecuaci\'on es equivalente a la obtenida anteriormente en (84).
+
+\section{Cosntantes Termodin\'amicas}
+La variedad de segundas derivadas son descripciones de las propiedades de los materiales. 
+
+\begin{eqnarray}
+\alpha &\equiv & \frac{1}{V} \bigg(\frac{\partial V}{\partial T}\bigg)_{P,N}\qquad \textrm{coef. de exp. t\'ermica}\\
+\chi_{T} &\equiv & \frac{-1}{V} \bigg(\frac{\partial V}{\partial P}\bigg)_{T,N}\qquad \textrm{comp. isot\'ermica}\\
+\chi_{S} &\equiv & \frac{-1}{V} \bigg(\frac{\partial V}{\partial P}\bigg)_{S,N}\qquad \textrm{comp. adiab\'atica}\\
+c_{V} &\equiv & T \bigg(\frac{\partial S}{\partial T}\bigg)_{V,N}\qquad \textrm{calor espec\'ifico a $V$ cte.}\\
+c_{p} &\equiv & T \bigg(\frac{\partial S}{\partial T}\bigg)_{P,N}\qquad \textrm{calor espec\'ifico a $P$ cte.}
+\end{eqnarray}
+El orden en que tomamos las segundas derivadas es irrelevante.
+\begin{equation}
+ \frac{\partial^{2} U}{\partial V \, \partial S} = \frac{\partial^{2} U}{\partial S \, \partial V} \Longrightarrow \left(\frac{\partial T}{\partial V}\right)_{S,N} = - \left(\frac{\partial p}{\partial S}\right)_{V,N}
+\end{equation}
+
+Las constantes termodin\'amicas no son independientes. Se relacionan por las \textit{relaciones de Maxwell}, como en el ejemplo anterior.
+
+\section{Uso de Jacobianos}
+\begin{equation}
+ J\equiv \frac{\partial (u,v,...)}{\partial (x,y,...)}=
+\left| \begin{array}{ccc}
+\frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} & \ldots \\
+\frac{\partial v}{\partial x} & \frac{\partial v}{\partial y} & \ldots \\
+\vdots               & \vdots               & \ddots
+\end{array} \right|
+\end{equation}
+
+\noindent Propiedades: 
+
+Cuando se cambian las filas o las columnas el determinante cambia de signo.
+
+\begin{equation}
+ \frac{\partial (u,v)}{\partial (x,y)} = - \frac{\partial (v,u)}{\partial (x,y)} = - \frac{\partial (u,v)}{\partial (y,x)} = \frac{\partial (v,u)}{\partial (y,x)}
+\end{equation}
+
+Si tenemos dos variables que a su vez dependen de dos variables, se usa regla de la cadena.
+
+\begin{equation}
+ \frac{\partial (u,v)}{\partial (r,s)}=\frac{\partial (u,v)}{\partial (x,y)} \frac{\partial (x,y)}{\partial (r,s)}
+\end{equation}
+
+\noindent Ejemplo de propiedad. 
+
+Sea $u = u(x,y)$, $x$ e $y$ son independientes, entonces tenemos las siguientes equivalencias:
+
+\begin{equation}
+\left(\frac{\partial u}{\partial x} \right)_{y} = \frac{\partial (u,y)}{\partial (x,y)}=
+\left| \begin{array}{cc}
+\frac{\partial u}{x} & \frac{\partial u}{y} \\
+\frac{\partial y}{x} & \frac{\partial y}{y}
+\end{array} \right| =
+\left| \begin{array}{cc}
+\frac{\partial u}{x} & \frac{\partial u}{y} \\
+0                    & 1
+\end{array} \right|
+\end{equation}
+
+Por \'ultimo tenemos la propiedad:
+
+\begin{equation}
+ \frac{\partial (u,v)}{\partial (x,y)} = \frac{1}{\frac{\partial (x,y)}{\partial (u,v)}}
+\end{equation}
+
+
+\subsection*{Ejemplo}
+Escribir en t\'erminos de segundas derivadas de U
+\begin{equation}
+ \chi_{T} = - \frac{1}{V} \bigg(\frac{\partial V}{\partial p}\bigg)_{T}
+\end{equation}
+
+Para resolverlo consideremos que:
+
+\begin{eqnarray}
+ \left(\frac{\partial p}{\partial V}\right)_{T} &=& \frac{\partial (p,T)}{\partial (V,T)} \\
+ & = & \frac{\partial (p,T)}{\partial (V,S)} \, \frac{\partial (V,S)}{\partial (V,T)} \\
+ & = & \frac{\partial (p,T)}{\partial (V,S)} \, \frac{1}{\frac{\partial (V,T)}{\partial (V,S)}}
+\end{eqnarray}
+\begin{equation}
+ = \left\{ \left(\frac{\partial p}{\partial V}\right)_{S} \left(\frac{\partial T}{\partial S}\right)_{V} - \left(\frac{\partial p}{\partial S}\right)_{V}\left(\frac{\partial T}{\partial V}\right)_{S}\right\} \bigg/ \left(\frac{\partial T}{\partial S}\right)_{V}
+\end{equation}
+\begin{eqnarray}
+ & = & \frac{1}{\frac{\partial^{2}U}{\partial S^{2}}} \left\{-U_{VV}U_{SS} + U^{2}_{SV}  \right\} \\
+ & = & \frac{U^{2}_{SV}-U_{VV}U_{SS}}{U_{SS}}\\
+\therefore  \chi_{T} & = & \frac{1}{V}\left\{\frac{U_{SS}}{U^{2}_{SV}-U_{VV}U_{SS}} \right\}
+\end{eqnarray}
+
+\subsection*{Relaci\'on importante}
+\begin{equation}
+ c_{p} = c_{v} + TV \frac{\alpha^{2}}{\chi_{T}}
+\end{equation}
+Las constantes termodin\'amicas no son independientes. 
+Demostraci\'on:
+\begin{equation}
+ \alpha=\frac{1}{V} \left(\frac{\partial V}{\partial T}\right)_{p}=\frac{1}{V}\frac{U_{SV}}{U_{SS}U_{VV}-U_{SV}^{2}}
+\end{equation}
+\begin{equation}
+ c_{v}=T\left(\frac{\partial S}{\partial T}\right)_{V}=\frac{T}{U_{SS}}
+\end{equation}
+\begin{equation}
+ c_{p}=T\left(\frac{\partial S}{\partial T}\right)_{p}=\frac{T\,U_{VV}}{U_{SS}U_{VV}-U_{SV}^{2}}
+\end{equation}
+Los reemplazamos en la ecuaci\'on por demostrar y queda.
+Esta relaci\'on nos dice que $c_{p}>c_{v}$\\
+
+Para un gas ideal $pV=N_{k}T$
+\begin{equation}
+ \alpha = \frac{1}{V}\left(\frac{\partial \frac{N_{k}T}{p}}{\partial T} \right)_{p} = \frac{1}{V}\frac{N_{k}T}{p}\frac{1}{T}=\frac{1}{T}
+\end{equation}
+para un gas ideal tambi\'en se pueden demostrar las siguientes relaciones:
+\begin{eqnarray}
+ \chi_{T}&=&\frac{1}{p}\\
+ c_{p} &=& c_{v} + \frac{pV}{T} = c_{v}+NK_{B} 
+\end{eqnarray}
+
+
+\section{Procesos Factibles y los que no lo son}
+Los procesos de transformaci\'on de energ\'ia cal\'orica en mec\'anica o viceversa deben ser tales que hagan crecer la entrop\'ia o a lo sumo la mantenga constante. De lo contrario se violar\'ia el segundo principio de la termodin\'amica.
+
+\subsection*{Ejemplo}
+Un sistema particular es contenido a un n\'umero de moles y volumen constante. As\'i ning\'un trabajo puede ser hecho por el sistema o sobre \'este. Adem\'as, la capacidadde calor del sistema es C. La ecuaci\'on fundamental del sistema es $S=S_{\circ} + C \ln(\frac{U}{U_{\circ}})$. Entonces $U=CT$
+
+Dos sistemas con igual capacidad cal\'orica, tiene temperatura inicial $T_{10}$ y $T_{20}$. Un motor es dise\~nado para levantar un elevador sacando energ\'ia desde los dos sistemas termodin\'amicos. \textquestiondown Cu\'al es m\'aximo de trabajo que puede producirse?
+
+\subsection*{Soluci\'on}
+Ambos sistemas alcanzan una temperatura com\'un $T_{f}$. El cambio de energ\'ia de lso sistemas t\'ermicos ser\'a entonces
+\begin{equation}
+ \Delta U=2CT_{f}-C(T_{10}-T_{20})
+\end{equation}
+y el trabajo entregado al sistema mec\'anico ser\'a $W=-\Delta U$, es decir,
+\begin{equation}
+ W = C(T_{10}+T_{20}-2T_{f})
+\end{equation}
+Cu\'al es la relaci\'on entre la energ\'ia y la temperatura?
+
+
+
+El cambio de la entrop\'ia total ocurre completamente en los dos sistemas t\'ermicos, para los cuales:
+\begin{equation}
+ \Delta S = C \ln \bigg(\frac{T_{f}}{T_{10}}\bigg) + C \ln \bigg(\frac{T_{f}}{T_{20}}\bigg)=2C\ln \bigg(\frac{T_{f}}{\sqrt{T_{10}T_{20}}}\bigg)
+\end{equation}
+Para maximizar el trabajo claramente se desea minimizar $T_{f}$ (Por ec. (109)). De acuerdo con la ec. (110) se tiene que minimizar $\Delta S$, el m\'inimo posible es cero que corresponde a un proceso irreversible. As\'i un motor \'optimo ser\'a el que cumpla con:
+
+\begin{equation}
+ T_{f}=\sqrt{T_{10}T_{20}}
+\end{equation}
+y
+\begin{equation}
+W=C(T_{10}+T_{20}-2\sqrt{T_{10}T_{20}}) 
+\end{equation}
+
+
+\section{M\'aquinas de Calor}
+Aparatos idealizados que convierten calor en trabajo mec\'anico.
+\begin{description}
+ \item \textit{Estanque de calor}: suficientementa grande para que al sacar calor o poner calor no se altere su temperatura.
+ \item \textit{Estanque de Trabajo}: se puede hacer trabajo y puede hacer trabajo.
+\end{description}
+La eficiencia en un proceso est\'a dado por:
+\begin{equation}
+ \eta = \frac{Q_{abs}}{Q_{total}}
+\end{equation}
+la eficiencia del proceso est\'a dado por:
+\begin{equation}
+ \eta = \frac{Q_{abs}}{Q_{total}}=\frac{Q_{I}-Q_{II}}{Q_{I}}=1-\frac{Q_{II}}{Q_{I}}
+\end{equation}
+
+
+% \subsection*{Ejemplo 2}
+% Tres cuerpos tienen temperaturas iniciales de 300 K, 350 k y 400 K. Se desea levantar un cuerpo tan alto como la temperatura lo permita, independietne de la temperatura de los otros dos. Cu\'al es la m\'axima temperatura asequible?
+% 
+% Soluci\'on: Designamos la temperatura iniciales como $T_{1}$, $T_{2}$ y $T_{3}$ en unidades de 100K. As\'i $T_{1}$=3, $T_{2}$=3.5 y $T_{3}$=4.
+% 
+% Asimismo designamos la temperatura alta como $T_{h}$. Es evidente
+
+...
+
+\section{Transformada de Legendre}
+Hasta ahora hemos usado dos relaciones fundamentales $U=U(S,N,V)$ y $S=S(U,N,V)$ que est\'an en funci\'on de par\'ametros extensivos. Los par\'ametros intensivos
+\begin{equation}
+ P_{k}=\left( \frac{\partial U}{\partial X_{j}}\right)_{X_{j}\neq k}
+\end{equation}
+
+Buscaremos ahora expresar una relaci\'on fundamental tambi\'en con los par\'ametros intensivos sin perder informacio\'n, es decir, buscamos una relaci\'on de la forma 
+
+$y=y(X_{j},P_{k})$
+
+La pendiente (falta el mono (grafo) para verlo mejor):
+\begin{equation}
+ p=\frac{y-\psi}{x -0}
+\end{equation}
+Cambiamos la curva de que tiene toda la informaci\'on como sus pendientes y la intersecci\'on con el eje Y. Entonces reconstituimos todas las intersecciones con el eje Y y todas las pendientes
+\begin{equation}
+ \psi=y-px,\qquad-x=\left( \frac{\partial \psi}{\partial p} \right)_{y}
+\end{equation}
+$\psi$ es la tranformada de Legendre de $y$.
+\begin{equation}
+ \psi=\psi(p)
+\end{equation}
+Esta \'ultima ecuaci\'on contiene toda la informaci\'on del sistema.
+
+\section{Formulaciones alternativas}
+Tenemos por la definici\'on de la transformada de Legendre:
+\begin{equation}
+ y=y\underbrace{(X_{j},P_{j})}_{\textrm{t-variables}}=y(X_{j}) - \underbrace{\sum_{k=1}^{r}P_{k}X_{k}}_{\bigstar}
+\end{equation}
+
+% \underbrace{- p \, \ud V}_{\spadesuit} para hacer una llave por abajo
+% \textrm{comp. isot\'ermica} para escribir dentro de una ecuación palabras
+$1\leqslant k \leqslant r \leqslant t$. Cada vez que quito a $y(X_{j})$ un $\bigstar$ aparece una variable intensiva.
+
+Entre las variables intensivas, hay una dependencia y es posible relacionarlas con la rel. de Gibbs - Duhemm. Entonces $r<t$ ya que al menos necesitamos una variable extensiva.
+
+\begin{equation}
+ U=U(S,V,N) \longrightarrow U=U(T,V,N) = U\left(\frac{\partial U}{\partial S},V,N\right)
+\end{equation}
+La \'unica condici\'on que se requiere es que:
+\begin{equation}
+ \frac{d^{2}y}{dX_{j}}\neq 0
+\end{equation}
+
+Veamos ahora una transformada de Legendre: Energ\'ia libre de Helmholtz (X: entrop\'ia, P: temperatura).
+\begin{equation}
+ F = F(T,V,N)\qquad F=U-TS
+\end{equation}
+Derivando
+\begin{eqnarray}
+ dF & = & dU-T ds - SdT \\
+    & = & Tds - pdV + \mu_{j} dN_{j} - Tds - SdT \\
+    & = & -S dT -pdV + \mu_{j}dN_{j} 
+\end{eqnarray}
+
+queda en funci\'on de T,V,N !!!
+\begin{equation}
+ F=F(T,V,N)
+\end{equation}
+
+Las posibilidades que hay son:\\
+\begin{itemize}
+ \item 2 par\'ametros extensivos, 1 par\'ametro intensivo.
+ \item 1 par\'ametro extensivo, 2 par\'emetros extensivos.
+\end{itemize}
+
+Para el primer caso:
+\begin{eqnarray}
+ F & = & F(T,V,N) \quad \textrm{ E libre de Helmholtz}\\ 
+ H & = & H(S,P,N_{j}) \quad \textrm{Entalp\'ia}\\
+   &   & (S,V,N_{j}) \quad \textrm{sin nombre}
+\end{eqnarray}
+
+Para el segundo caso:
+\begin{eqnarray}
+ G & = & G(T,P,N_{j}) \quad \textrm{ E libre de Gibbs}\\ 
+ \Omega & = & \Omega(T,V,\mu_{j}) \quad \textrm{ P. Gran Can\'onico}\\
+   &   & (S,P,\mu_{j}) \quad \textrm{sin nombre}
+\end{eqnarray}
+
+\section{Principios de M\'inimos para los Potenciales}
+\subsection*{Principio de Energ\'ia m\'inima}
+Los valores asumidos por los par\'ametros extensivos en ausencia de una restricci\'on interna son aquellos que minimizan la energ\'ia interna sobre el m\'ultiple de estados de equilibrios restringidos, para un valor dado de la entrop\'ia total.
+
+Antes manten\'iamos U fija, y dejar que al remover una restricci\'on S alcanzara su m\'aximo ($dS=0$).
+
+Ahora queremos fijar S y encontrar la m\'inima energ\'ia U ($dU=0$).
+
+Para un sistema inicialmente con una pared adiab\'atica que separa dos secciones: 1 y 2, la energ\'ia total del sistema es:
+\begin{eqnarray}
+ U&=&U^{(1)}+U^{(2)}\\
+ \therefore dU &=& T^{(1)}dS^{1}+T^{(2)}dS^{(2)}
+\end{eqnarray}
+ Removemos la restricci\'on, haciendo la pared diat\'ermica. Se tiene el flujo
+\begin{equation}
+ S=cte \longrightarrow dS^{(1)}=-dS^{(2)}
+\end{equation}
+Minimizando la energ\'ia interna
+\begin{eqnarray}
+ dU = 0 \longrightarrow \left(T^{(1)}-T^{(2)}\right)dS^{(1)}=0
+\end{eqnarray}
+\begin{equation}
+ \longrightarrow T^{(1)}=T^{(2)}
+\end{equation}
+Equilibrio t\'ermico.
+
+\subsection*{Principio M\'inimos para la Energ\'ia libre de Helmholtz:}
+
+Tenemos un sistema y lo ponemos en un estanque con teperatura constante ($T^{(e)}$). El sistema consta de dos partes: 1 y 2, separadas por una pared r\'igida (V cte) e impermeable. Tenemos:
+\begin{equation}
+ \ud U = T^{(1)} \ud S^{(1)}+T^{(2)} \ud S^{(2)} + T^{(e)} \ud S^{(e)} + ...
+\end{equation}
+
+Para equilibrio: $\ud U^{tot}=0$
+Adem\'as la entrop\'ia es constante.
+\begin{equation}
+ S=cte\quad \rightarrow \quad \ud S + \ud S^{(e)} = 0
+\end{equation}
+
+\begin{eqnarray}
+  T^{(1)} \ud S^{(1)} + T^{(2)} \ud S^{(2)} +T^{(e)} (\ud S^{(1)} + \ud S^{(2)})&=0 \\
+ (T^{(1)} - T^{(e)} )\ud S^{(1)} + (T^{(2)} - T^{(e)} )\ud S^{(2)} &= 0
+\end{eqnarray}
+\begin{equation}
+  \rightarrow T^{(1)}=T^{(2)}=T^{(e)}
+\end{equation}
+
+por lo tanto, lo que se minimiza es:
+\begin{equation}
+ \ud U + T^{(e)}\ud S^{(e)} = 0 = \ud U - T^{(e)} \ud S
+\end{equation}
+\begin{equation}
+ \ud (U - T^{(e)} S) = 0
+\end{equation}
+\begin{equation}
+ \ud F = 0 = \ud (U-TS)
+\end{equation}
+
+El valor de equilibrio de cualquier par\'ametro intensivo no restringido de un sistema, en contacto diat\'ermico con un estanque de calor (a T), minimizar F a esa temperatura T.
+
+\section{Proceso de Joule - Thomson}
+Consideremos el sistema de la figura, em el centro hay un pist\'on con una membrana, que separa un gas (que a cada lado tiene diferentes presiones).
+ 
+\sfig{1.00}{Diagram1}{El sistema realiza un proceso adiab\'atico}
+
+
+Como el proceso es adiab\'atic0 $\ud Q = 0$ y el n\'umero de part\'iculas es cte. Determinemos la diferencia de energ\'ia:
+\begin{eqnarray}
+ U_{f}-U_{i} & = & -p_{f}V_{f} + p_{i}V_{i} \\
+ U_{f} + p_{f}V_{f} & = & U_{f}-U_{i}+ p_{i}V_{i}
+\end{eqnarray}
+
+\begin{equation}
+ H = U + pV \rightarrow H_{i} = H_{f}
+\end{equation}
+Entalp\'ia constante (funcion que se minimiza en contacto con un estanque de presi\'on)
+\begin{equation}
+ \Delta P \rightarrow \Delta T
+\end{equation}
+\textit{Cu\'al es el cambio de temperatura asociado al proceso?}
+
+\begin{eqnarray}
+ \left(\frac{\partial T}{\partial p} \right)_{H} & = & \left(\frac{\partial (T,H)}{\partial (p,H)} \right) \\
+  & = & \frac{\partial (T,H)}{\partial (T,p)}\frac{\partial(T,p)}{\partial(p,H)} \\
+  & = & \left( \frac{\partial H}{\partial p} \right)_{T} \bigg / \left( \frac{\partial H}{\partial T} \right)_{p} \\
+  & = & -\frac{1}{c_{p}}\left(\frac{\partial H}{\partial p} \right)_{T}
+\end{eqnarray}
+
+donde
+\begin{equation}
+\left(\frac{\partial H}{\partial p}\right)_{T} = V + T \left( \frac{S}{p} \right)_{T} = V-T \left(\frac{\partial V}{\partial T} \right)_{p}
+\end{equation}
+ Que hacer ahora? nos acordamos de G.
+\begin{eqnarray}
+ G  =& G(T,P,N_{j}) \\
+ dG  =& -S \ud T + V\ud P +\mu_{j}\ud N_{j} \\
+ \frac{\partial ^{2} G}{\partial p  \, \partial T}  =& -\left(\frac{\partial S}{\partial p} \right)_{T} = \left(\frac{\partial S}{\partial T} \right)_{p}  
+\end{eqnarray}
+
+ Entonces:
+
+\begin{equation}
+ \frac{-1}{c_{p}}\left(\frac{\partial H}{\partial p} \right)_T = \frac{1}{c_{p}}\left\{T\left(\frac{\partial V}{\partial T}\right)_{p} -V \right\}
+\end{equation}
+\begin{equation}
+ = \frac{1}{c_{p}}\left\{TV \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_{p} -V \right\}= \frac{V}{c_{p}}\left\{T\alpha - 1\right\}
+\end{equation}
+
+Como hay un cambio de P, hay un cambio de T.\\
+Para un gas ideal:
+\begin{equation}
+ \frac{V}{c_{p}}\left\{T\frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_{p} -1 \right\}=?
+\end{equation}
+\begin{equation}
+ \left(\frac{\partial V}{\partial T} \right)_{p} = \frac{\partial}{\partial T}\left\{\frac{N_{k}T}{p}\right\}_{p} = \frac{N_{k}T}{pV} \frac{V}{T} = \frac{V}{T}
+\end{equation}
+\begin{equation}
+ \rightarrow \frac{V}{c_{p}}\left\{\frac{T}{V}\frac{V}{V} - 1\right\} =0
+\end{equation}
+
+ 
+Para un gas ideal en el proceso de Joule - Thomson el cambio de T es 0 \\
+
+\textit{Cu\'al es el cambio de entrop\'ia asociado al proceso?}
+
+\begin{equation}
+ \left(\frac{\partial S}{\partial p}\right)_{H} = \frac{-V}{p} < 0
+\end{equation}
+Ya que ten\'iamos que
+\begin{equation}
+ -\left(\frac{\partial S}{\partial p}\right)_{T} = \left(\frac{\partial V}{\partial T}\right)_{p}
+\end{equation}
+
+y
+
+\begin{equation}
+ \left(\frac{\partial S}{\partial (-p)}\right)_{H} = \frac{V}{T}>0
+\end{equation}
+
+Ya que la variaci\'on de presi\'on es positiva (presi\'on disminuye)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Estabilidad de sistemas termodin\'amicos}
+
+Consideremos un sitema y una una secci\'on de ese subsistema tal que $V' \ll V$. Los cosos con primas corresponden al subsistema. Se tienen entonces las siguientes condiciones.
+
+\begin{eqnarray}
+ V + V' = V_{t} \\
+ V n_{j} + V' n_{j}' = N_{j,t} \\
+ V s + V' s' = S_{t} \\
+ V u + V' u' = U_{t}
+\end{eqnarray}
+
+Buscamos $\Delta U_{t}$ preguntandonos si es estable o no.
+
+Por series de Taylor de segundo orden:
+
+\begin{eqnarray}
+ \Delta U & = & V \bigg\{ \bigg( \frac{\partial u}{\partial s} \bigg)_{eq} \Delta s +  \bigg( \frac{\partial u}{\partial n_{j}}   \bigg)_{eq} \Delta n_{j}   \bigg \} \nonumber \\
+          &   & +\, V' \bigg\{ \bigg( \frac{\partial u'}{\partial s'} \bigg)_{eq} \Delta s' +  \bigg( \frac{\partial u'}{\partial n_{j}'} \bigg)_{eq} \Delta n_{j}'   \bigg \} \nonumber \\
+          &   & +\, \frac{1}{2} V \bigg\{ u_{ss} (\Delta s)^{2} + 2 u_{s n_{j}} \Delta s \Delta n_{j} \nonumber \\ 
+          &   & +\, \sum_{i,j} u_{n_{i} n_{j}} \Delta n_{i} \Delta n_{j} \bigg\} + ...
+\end{eqnarray}
+
+La condici\'on de estabilidad:
+\begin{equation}
+ u_{ss}(\Delta s)^{2} + 2 u_{sn_{j}}\Delta s \Delta n_{j} + u_{n_{i}n_{j}} \Delta n_{i} \Delta n_{j} > 0
+\end{equation}
+
+Esto puede escribirse como una matriz Hessiana.
+
+ \begin{displaymath}
+\left( \begin{array}{cccc}
+u_{ss} & u_{sn_{1}} & u_{sn_{2}} & \ldots \\
+u_{n_{1}s} & u_{n_{1}n_{1}} & u_{n_{1}n_{2}} & \ldots \\
+u_{n_{2}s} & u_{n_{2}n_{1}} & u_{n_{2}n_{2}} & \ldots \\
+\vdots & \vdots & \vdots & \ddots
+\end{array} \right)
+\end{displaymath}
+
+Queremos encontrar el m\'inimo, por lo que necesitamos que todos los determinantes sean positivos definidos.
+
+\section{Sistemas de una componente}
+
+\begin{equation}
+ u_{ss}\bigg( \frac{\Delta s}{\Delta u} \bigg)^{2} + 2 u_{sn}\bigg( \frac{\Delta s}{\Delta u} \bigg) + u_{nn} > 0
+\end{equation}
+ Para que las ra\'ices reales el discriminante debe ser negativo. Es decir
+\begin{equation}
+ u^{2}_{sn} - u_{ss} u_{nn} < 0 \quad \rightarrow \quad u_{ss}u_{nn}>u^{2}_{sn}
+\end{equation}
+
+Analizamos los menores de la matriz, deben ser $>$ 0, as\'i que:
+
+ $u_{ss}>0$:
+\begin{equation}
+ u_{ss}=\frac{\partial}{\partial s}\left(\frac{\partial u}{\partial s} \right)=\frac{\partial T}{\partial s}=V\left(\frac{\partial T}{\partial s} \right)\nonumber
+\end{equation}
+\begin{equation}
+ =VT\frac{1}{T}\left(\frac{\partial T}{\partial s} \right)_V=\frac{VT}{c_v}>0
+\end{equation}
+Por lo que se concluye que $c_v>0$, por ende, para que el sistema sea estable, al agregarle calor, debe subir su temperatura (De lo contrario, el sistema est\'a cambiando de fase).
+
+$u_{ss} u_{nn}-u^{2}_{sn} > 0$:
+\begin{equation}
+ \left(\frac{\partial T}{\partial s} \right)_{n} \left(\frac{\partial \mu}{\partial n} \right)_{s} -\left(\frac{\partial T}{\partial n} \right)_{s} \left(\frac{\partial \mu}{\partial s} \right)_{n} =\left(\frac{\partial(T,\mu)}{\partial(s,n)} \right) \nonumber
+\end{equation}
+\begin{equation}
+=\frac{\partial(T,\mu,V)}{\partial(S,N,V)} V^{2} = V^{2} \frac{\frac{\partial(T,\mu,V)}{\partial(T,N,V)}}{\frac{\partial(S,N,V)}{\partial(T,N,V)}}=V^{2}\frac{\left(\frac{\partial\mu}{\partial N} \right)_{T,V}}{\left(\frac{\partial S}{\partial T} \right)_{N,V}}\frac{T}{T} \nonumber
+\end{equation}
+\begin{equation}
+ =\frac{VT^{2}}{c_{V}}\left(\frac{\partial \mu}{\partial N} \right)_{T,V} \, \rightarrow \, \left(\frac{\partial \mu}{\partial N} \right)_{T,V}>0
+\end{equation}
+
+Por lo tanto si agrego part\'iculas al sistema con T,V constantes, el potencial qu\'imico aumenta.
+
+
+De esto se concluye que 
+\textbf{la condici\'on de estabilidad es que las constantes termodin\'amicas sean mayores a cero.}
+
+
+
+
+
+\begin{thebibliography}{1}
+\bibitem {1} Callen H.B. Thermodynamics And An Introduction To Thermostatistics 2ed., Wiley, 1985
+\end{thebibliography}
+
+
+\end{document}
